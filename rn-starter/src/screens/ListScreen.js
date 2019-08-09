@@ -16,7 +16,11 @@ function ListScreen() {
   ];
   return (
     <View>
-      <Text>List Screen</Text>
+      <FlatList
+        keyExtractor={friend => friend.name}
+        data={friends}
+        renderItem={({ item }) => <Text>{item.name}</Text>}
+      />
     </View>
   );
 }
