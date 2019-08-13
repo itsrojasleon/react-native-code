@@ -4,7 +4,11 @@ import { View, Text, StyleSheet, TextInput } from 'react-native';
 const TextScreen = () => {
   return (
     <View>
-      <TextInput style={styles.input} />
+      <TextInput
+        autoCorrect={false}
+        autoCapitalize="none"
+        style={styles.input}
+      />
     </View>
   );
 };
