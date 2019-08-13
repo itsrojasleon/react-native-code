@@ -3,10 +3,11 @@ import { View, Text, StyleSheet, TextInput } from 'react-native';
 
 const TextScreen = () => {
   const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <View>
-      <Text>Enter your name</Text>
+      <Text>Enter a name</Text>
       <TextInput
         value={name}
         onChangeText={newValue => setName(newValue)}
@@ -15,6 +16,16 @@ const TextScreen = () => {
         style={styles.input}
       />
       <Text>My name is {name}</Text>
+
+      <Text>Enter a password</Text>
+      <TextInput
+        value={password}
+        onChangeText={newValue => setPassword(newValue)}
+        style={styles.input}
+      />
+      {password.length < 4 ? (
+        <Text>Password must be longer than 5 characters</Text>
+      ) : null}
     </View>
   );
 };
