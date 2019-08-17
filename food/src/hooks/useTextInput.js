@@ -4,7 +4,7 @@ export const useTextInput = defaultValue => {
   const [inputValue, setInputValue] = useState(defaultValue || '');
 
   return {
-    error: inputValue === '' ? 'Please enter a name' : undefined,
+    // error: inputValue === '' ? 'Please enter a name' : null,
 
     // Contains objects that can be spread onto <input> elements
     inputProps: {

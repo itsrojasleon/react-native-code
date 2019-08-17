@@ -5,7 +5,7 @@ import { useTextInput } from '../hooks/useTextInput';
 
 const SearchScreen = () => {
   // input props will be {value: '', onChangeText: function}
-  const { error, inputProps } = useTextInput('');
+  const { inputProps } = useTextInput('');
 
   return (
     <View>

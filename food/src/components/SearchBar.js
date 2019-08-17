@@ -13,7 +13,6 @@ const SearchBar = ({ inputProps }) => {
         style={styles.inputStyle}
         placeholder='Search'
       />
-      {/* {input.error && <Text>{input.error}</Text>} */}
       <Text>{inputProps.value}</Text>
     </View>
   );
