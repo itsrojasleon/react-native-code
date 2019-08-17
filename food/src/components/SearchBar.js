@@ -14,7 +14,6 @@ const SearchBar = ({ inputProps, onTermSubmit }) => {
         style={styles.inputStyle}
         placeholder='Search'
       />
-      <Text>{inputProps.value}</Text>
     </View>
   );
 };
