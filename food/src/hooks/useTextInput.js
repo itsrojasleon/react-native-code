@@ -10,7 +10,7 @@ export const useTextInput = defaultValue => {
     inputProps: {
       value: inputValue,
       onChangeText: newValue => setInputValue(newValue),
-      onEndEditing: () => console.log('Term was submitted'),
+      // onEndEditing: () => console.log('Term was submitted'),
     },
   };
 };
