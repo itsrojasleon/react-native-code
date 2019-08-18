@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import { useTextInput } from '../hooks/useTextInput';
-import yelp from '../api/yelp';
 import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
 
@@ -18,8 +17,8 @@ const SearchScreen = () => {
   return (
     <View>
       <SearchBar inputProps={inputProps} onTermSubmit={() => searchApi(term)} />
-      {errorMessage && <Text>{errorMessage}</Text>}
-      <Text>We have found {results.length} results</Text>
+      {/* {errorMessage && <Text>{errorMessage}</Text>} */}
+      {/* <Text>We have found {results.length} results</Text> */}
       <ResultsList results={filterResultsByPrice('$')} title='Cost Effective' />
       <ResultsList results={filterResultsByPrice('$$')} title='Bit Pricier' />
       <ResultsList results={filterResultsByPrice('$$$')} title='Big Spender' />
