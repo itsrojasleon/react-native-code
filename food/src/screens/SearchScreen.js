@@ -6,23 +6,26 @@ import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
 
 const SearchScreen = () => {
-  // input props will be {value: '', onChangeText: function}
-  const { inputProps } = useTextInput('');
   const [searchApi, results, errorMessage] = useResults();
+  const { inputProps } = useTextInput('', searchApi);
 
   const filterResultsByPrice = price => {
     return results.filter(result => result.price === price);
   };
 
   return (
+    // onTermSubmit={() => searchApi(term)}
     <View>
-      <SearchBar inputProps={inputProps} onTermSubmit={() => searchApi(term)} />
+      <SearchBar inputProps={inputProps} />
       {/* {errorMessage && <Text>{errorMessage}</Text>} */}
-      {/* <Text>We have found {results.length} results</Text> */}
+
       <ResultsList results={filterResultsByPrice('$')} title='Cost Effective' />
       <ResultsList results={filterResultsByPrice('$$')} title='Bit Pricier' />
       <ResultsList results={filterResultsByPrice('$$$')} title='Big Spender' />
     </View>
   );
 };
+
+const styles = StyleSheet.create({});
+
 export default SearchScreen;

@@ -8,7 +8,6 @@ const SearchBar = ({ inputProps, onTermSubmit }) => {
       <Feather name='search' style={styles.iconStyle} />
       <TextInput
         {...inputProps}
-        onEndEditing={onTermSubmit}
         autoCapitalize='none'
         autoCorrect={false}
         style={styles.inputStyle}

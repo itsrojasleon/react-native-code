@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useTextInput = defaultValue => {
+export const useTextInput = (defaultValue, fetchResource) => {
   const [inputValue, setInputValue] = useState(defaultValue || '');
 
   return {
@@ -10,7 +10,7 @@ export const useTextInput = defaultValue => {
     inputProps: {
       value: inputValue,
       onChangeText: newValue => setInputValue(newValue),
-      // onEndEditing: () => console.log('Term was submitted'),
+      onEndEditing: () => fetchResource(inputValue),
     },
   };
 };
