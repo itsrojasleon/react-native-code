@@ -18,7 +18,7 @@ const SearchScreen = () => {
     <View>
       <SearchBar inputProps={inputProps} />
       {/* {errorMessage && <Text>{errorMessage}</Text>} */}
-
+      <Text>We have found {results.length}</Text>
       <ResultsList results={filterResultsByPrice('$')} title='Cost Effective' />
       <ResultsList results={filterResultsByPrice('$$')} title='Bit Pricier' />
       <ResultsList results={filterResultsByPrice('$$$')} title='Big Spender' />
