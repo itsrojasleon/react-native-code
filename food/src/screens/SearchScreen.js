@@ -5,7 +5,7 @@ import { useTextInput } from '../hooks/useTextInput';
 import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
 
-const SearchScreen = () => {
+const SearchScreen = props => {
   const [searchApi, results, errorMessage] = useResults();
   const { inputProps } = useTextInput('', searchApi);
 
@@ -14,10 +14,9 @@ const SearchScreen = () => {
   };
 
   return (
-    // onTermSubmit={() => searchApi(term)}
     <>
       <SearchBar inputProps={inputProps} />
-      {/* {errorMessage && <Text>{errorMessage}</Text>} */}
+      {errorMessage && <Text>{errorMessage}</Text>}
       <Text>We have found {results.length}</Text>
       <ScrollView>
         <ResultsList
