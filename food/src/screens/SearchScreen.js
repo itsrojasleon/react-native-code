@@ -15,7 +15,7 @@ const SearchScreen = () => {
 
   return (
     // onTermSubmit={() => searchApi(term)}
-    <View style={{ flex: 1 }}>
+    <>
       <SearchBar inputProps={inputProps} />
       {/* {errorMessage && <Text>{errorMessage}</Text>} */}
       <Text>We have found {results.length}</Text>
@@ -30,7 +30,7 @@ const SearchScreen = () => {
           title='Big Spender'
         />
       </ScrollView>
-    </View>
+    </>
   );
 };
 
