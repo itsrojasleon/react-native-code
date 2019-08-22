@@ -6,7 +6,17 @@ export default (reducer, actions, initialState) => {
   const Provider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
-    return <Context.Provider value={{ state }}>{children}</Context.Provider>;
+    // actions === { addBlogPost: (dispatch) => {return () => {} } }
+    const boundActions = {};
+    for (let key in actions) {
+      boundActions[key] = actions[key](dispatch);
+    }
+
+    return (
+      <Context.Provider value={{ state, ...actions }}>
+        {children}
+      </Context.Provider>
+    );
   };
 
   return { Context, Provider };
