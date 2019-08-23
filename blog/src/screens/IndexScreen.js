@@ -16,7 +16,14 @@ const IndexScreen = ({ navigation }) => {
     // let ignore = false;
     // if (!ignore)
     getBlogPost();
+
+    const listener = navigation.addListener('didFocus', () => {
+      getBlogPost();
+    });
     // return () => { ignore = true; };
+    return () => {
+      listener.remove();
+    };
   }, []);
   return (
     <View>
