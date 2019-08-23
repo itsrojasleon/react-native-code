@@ -1,5 +1,5 @@
 import createDataContext from './createDataContext';
-import jsonserver from '../api/jsonserver';
+import jsonserver from '../api/jsonServer';
 
 const blogReducer = (state, action) => {
   switch (action.type) {
