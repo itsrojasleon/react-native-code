@@ -9,6 +9,11 @@
       "title": "React is Cool",
       "content": "Vue is bad",
       "id": 3
+    },
+    {
+      "title": "Title changed",
+      "content": "Content changed",
+      "id": 4
     }
   ]
 }
