@@ -6,9 +6,9 @@
       "content": "Content for my post"
     },
     {
-      "title": "OK",
-      "content": "OK",
-      "id": 2
+      "title": "React is Cool",
+      "content": "Vue is bad",
+      "id": 3
     }
   ]
 }
