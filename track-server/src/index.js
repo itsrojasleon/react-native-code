@@ -16,6 +16,10 @@ app.use(trackRoutes);
 const mongoUri =
   'mongodb+srv://rojasleon:D9SEMGBUZfABF9ZL@cluster0-13ox1.mongodb.net/test?retryWrites=true&w=majority';
 
+if (!mongoUri) {
+  throw new Error(`MongoURI was not supplied`);
+}
+
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useCreateIndex: true
