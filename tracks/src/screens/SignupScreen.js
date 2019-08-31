@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Text } from 'react-native-elements';
-import Spacer from '../components/Spacer';
+import { View, StyleSheet } from 'react-native';
 import { Context as AuthContext } from '../context/authContext';
 import AuthForm from '../components/AuthForm';
+import NavLink from '../components/NavLink';
 
-const SignupScreen = ({ navigation }) => {
+const SignupScreen = () => {
   const { state, signup } = useContext(AuthContext);
 
   return (
@@ -16,11 +15,10 @@ const SignupScreen = ({ navigation }) => {
         submitButtonText="Sign Up"
         onSubmit={signup}
       />
-      <TouchableOpacity onPress={() => navigation.navigate('Signin')}>
-        <Spacer>
-          <Text style={styles.link}>Already have an account?</Text>
-        </Spacer>
-      </TouchableOpacity>
+      <NavLink
+        text="Already have an account? Sign in instead!"
+        routeName="Signin"
+      />
     </View>
   );
 };
@@ -37,9 +35,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     marginBottom: 200
-  },
-  link: {
-    color: 'blue'
   }
 });
 
