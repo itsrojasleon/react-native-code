@@ -9,8 +9,12 @@ const trackReducer = (state, action) => {
 };
 
 const fetchTracks = dispatch => () => {};
-const createTrack = dispatch => (name, locations) => {
-  console.log(name, locations.length);
+const createTrack = dispatch => async (name, locations) => {
+  try {
+    await trackerApi.post('/tracks', { name, locations });
+  } catch (err) {
+    console.log(err.message);
+  }
 };
 
 export const { Provider, Context } = createDataContext(
