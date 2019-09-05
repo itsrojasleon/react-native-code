@@ -3,6 +3,7 @@ require('./models/Track');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const authRouter = require('./routes/authRoutes');
 const trackRoutes = require('./routes/trackRoutes');
 const requireAuth = require('./middlewares/requireAuth');
@@ -10,6 +11,7 @@ const requireAuth = require('./middlewares/requireAuth');
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors());
 app.use(authRouter);
 app.use(trackRoutes);
 
