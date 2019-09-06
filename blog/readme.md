@@ -6,9 +6,9 @@ Create, read, update and delete blogs from a React Native Application
 <hr />
 
 <p float="left">
-  <img src="https://raw.githubusercontent.com/geohot/twitchslam/master/example.png" width="200" />
-  <img src="https://raw.githubusercontent.com/geohot/twitchslam/master/example.png" width="200" />
-  <img src="https://raw.githubusercontent.com/geohot/twitchslam/master/example.png" width="200" />
+  <img src="https://raw.githubusercontent.com/rojasleon/react-native-code/own-blog/simulator1.png" width="200" />
+  <img src="https://raw.githubusercontent.com/rojasleon/react-native-code/own-blog/simulator2.png" width="200" />
+  <img src="https://raw.githubusercontent.com/rojasleon/react-native-code/own-blog/simulator3.png" width="200" />
 </p>
 
 ## System Requirements
