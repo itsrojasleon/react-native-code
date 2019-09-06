@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     marginTop: 5
   },
   icon: {
-    fontSize: 24
+    fontSize: 20
   }
 });
 
