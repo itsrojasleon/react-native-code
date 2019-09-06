@@ -45,9 +45,10 @@ const IndexScreen = ({ navigation }) => {
                     height={43}
                     borderRadius={4}
                   />
-                  <Text style={styles.title}>
-                    {item.title} - {item.id}
-                  </Text>
+                  <View style={styles.texts}>
+                    <Text style={styles.title}>{item.title}</Text>
+                    <Text style={styles.time}>2 min</Text>
+                  </View>
                 </View>
                 <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
                   <Feather style={styles.icon} name="trash" />
@@ -76,16 +77,27 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    margin: 10
+    marginTop: 10,
+    marginRight: 10,
+    marginBottom: 15,
+    marginLeft: 10
   },
   child: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
   },
+  texts: {
+    flexDirection: 'column',
+    marginLeft: 10
+  },
   title: {
     fontSize: 18,
-    marginLeft: 8
+    fontWeight: '500'
+  },
+  time: {
+    color: 'rgb(100,100,100)',
+    marginTop: 5
   },
   icon: {
     fontSize: 24
