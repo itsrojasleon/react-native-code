@@ -5,11 +5,7 @@ Create, read, update and delete blogs from a React Native Application
 
 <hr />
 
-<p float="left">
-  <img src="https://raw.githubusercontent.com/rojasleon/react-native-code/own-blog/blog/examples/simulator1.png" width="200" />
-  <img src="https://raw.githubusercontent.com/rojasleon/react-native-code/own-blog/blog/examples/simulator2.png" width="200" />
-  <img src="https://raw.githubusercontent.com/rojasleon/react-native-code/own-blog/blog/examples/simulator3.png" width="200" />
-</p>
+<img src="https://raw.githubusercontent.com/rojasleon/react-native-code/own-blog/blog/examples/blog.png" width="1000" />
 
 ## System Requirements
 
@@ -30,9 +26,11 @@ expo --version
 ## Download
 
 You can clone this repo with
+
 ```shell
 git clone git@github.com:rojasleon/react-native-code.git
 ```
+
 or download the ZIP file
 
 ## Setup server
@@ -42,12 +40,14 @@ You need this [JSON Server project](https://github.com/rojasleon/react-native-co
 ## Setup client
 
 Copy a new url from ngrok and put it in `src/api/jsonServer.js`
+
 ```shell
 yarn install
 yarn start
 ```
+
 If you want to run the ios simulator you can run it pressing `i` or `a` for android
 
-## License 
+## License
 
 MIT
