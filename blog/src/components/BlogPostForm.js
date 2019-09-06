@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 const BlogPostForm = ({ onSubmit, initialValues }) => {
   const [title, setTitle] = useState(initialValues.title);
   const [content, setContent] = useState(initialValues.content);
+  const [image, setImage] = useState(initialValues.image);
 
   return (
     <View>
@@ -19,7 +20,16 @@ const BlogPostForm = ({ onSubmit, initialValues }) => {
         value={content}
         onChangeText={text => setContent(text)}
       />
-      <Button onPress={() => onSubmit(title, content)} title="Save Blog Post" />
+      <Text style={styles.label}>Enter Image</Text>
+      <TextInput
+        style={styles.input}
+        value={image}
+        onChangeText={text => setImage(text)}
+      />
+      <Button
+        onPress={() => onSubmit(title, content, image)}
+        title="Save Blog Post"
+      />
     </View>
   );
 };
@@ -27,7 +37,8 @@ const BlogPostForm = ({ onSubmit, initialValues }) => {
 BlogPostForm.defaultProps = {
   initialValues: {
     title: '',
-    content: ''
+    content: '',
+    image: ''
   }
 };
 

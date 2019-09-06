@@ -4,10 +4,12 @@ import {
   Text,
   StyleSheet,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native';
 import { Context } from '../contetx/BlogContext';
 import { Feather } from '@expo/vector-icons';
+import Img from '../components/Img';
 
 const IndexScreen = ({ navigation }) => {
   const { state, deleteBlogPost, getBlogPost } = useContext(Context);
@@ -36,9 +38,17 @@ const IndexScreen = ({ navigation }) => {
               onPress={() => navigation.navigate('Show', { id: item.id })}
             >
               <View style={styles.row}>
-                <Text style={styles.title}>
-                  {item.title} - {item.id}
-                </Text>
+                <View style={styles.child}>
+                  <Img
+                    image={item.image}
+                    width={65}
+                    height={43}
+                    borderRadius={4}
+                  />
+                  <Text style={styles.title}>
+                    {item.title} - {item.id}
+                  </Text>
+                </View>
                 <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
                   <Feather style={styles.icon} name="trash" />
                 </TouchableOpacity>
@@ -65,13 +75,17 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    borderTopWidth: 1,
-    borderColor: 'gray'
+    alignItems: 'center',
+    margin: 10
+  },
+  child: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
   title: {
-    fontSize: 18
+    fontSize: 18,
+    marginLeft: 8
   },
   icon: {
     fontSize: 24
