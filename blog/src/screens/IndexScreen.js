@@ -4,10 +4,12 @@ import {
   Text,
   StyleSheet,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native';
 import { Context } from '../contetx/BlogContext';
 import { Feather } from '@expo/vector-icons';
+import Img from '../components/Img';
 
 const IndexScreen = ({ navigation }) => {
   const { state, deleteBlogPost, getBlogPost } = useContext(Context);
@@ -36,9 +38,18 @@ const IndexScreen = ({ navigation }) => {
               onPress={() => navigation.navigate('Show', { id: item.id })}
             >
               <View style={styles.row}>
-                <Text style={styles.title}>
-                  {item.title} - {item.id}
-                </Text>
+                <View style={styles.child}>
+                  <Img
+                    image={item.image}
+                    width={65}
+                    height={43}
+                    borderRadius={4}
+                  />
+                  <View style={styles.texts}>
+                    <Text style={styles.title}>{item.title}</Text>
+                    <Text style={styles.time}>2 min</Text>
+                  </View>
+                </View>
                 <TouchableOpacity onPress={() => deleteBlogPost(item.id)}>
                   <Feather style={styles.icon} name="trash" />
                 </TouchableOpacity>
@@ -65,16 +76,31 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    borderTopWidth: 1,
-    borderColor: 'gray'
+    alignItems: 'center',
+    marginTop: 10,
+    marginRight: 10,
+    marginBottom: 15,
+    marginLeft: 10
+  },
+  child: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  texts: {
+    flexDirection: 'column',
+    marginLeft: 10
   },
   title: {
-    fontSize: 18
+    fontSize: 18,
+    fontWeight: '500'
+  },
+  time: {
+    color: 'rgb(100,100,100)',
+    marginTop: 5
   },
   icon: {
-    fontSize: 24
+    fontSize: 20
   }
 });
 
