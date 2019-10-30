@@ -19,6 +19,7 @@ const SearchBar = ({ inputProps }) => {
 };
 const styles = StyleSheet.create({
   backgroundStyle: {
+    backgroundColor: 'white',
     marginTop: 15,
     borderWidth: 1,
     borderColor: '#ccc',
@@ -30,12 +31,12 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 1,
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.2,
     shadowRadius: 3.84,
 
-    elevation: 5,
+    elevation: 10,
   },
   inputStyle: {
     flex: 1,
