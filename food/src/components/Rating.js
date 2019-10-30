@@ -5,9 +5,9 @@ import { FontAwesome } from '@expo/vector-icons';
 const Star = ({ selected }) => (
   <View>
     {selected ? (
-      <FontAwesome name='star' size={30} style={styles.starSelected} />
+      <FontAwesome name='star' size={25} style={styles.starSelected} />
     ) : (
-      <FontAwesome name='star' size={30} style={styles.star} />
+      <FontAwesome name='star' size={25} style={styles.star} />
     )}
   </View>
 );
@@ -17,10 +17,12 @@ const Raiting = ({ totalStars, totalSelected }) => {
 
   return (
     <View>
-      {Array.from({ length: 5 }).map((n, i) => {
-        return <Star key={i} selected={i < starsSelected} />;
-      })}
-      <Text>
+      <View style={styles.container}>
+        {Array.from({ length: 5 }).map((n, i) => {
+          return <Star key={i} selected={i < starsSelected} />;
+        })}
+      </View>
+      <Text style={styles.text}>
         {starsSelected} of {totalStars} stars
       </Text>
     </View>
@@ -28,11 +30,23 @@ const Raiting = ({ totalStars, totalSelected }) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   star: {
     color: 'rgb(232,232,232)',
   },
   starSelected: {
     color: 'rgb(255,221,90)',
+  },
+  text: {
+    textAlign: 'center',
+    marginBottom: 20,
+    marginTop: 3,
+    fontWeight: '300',
   },
 });
 
