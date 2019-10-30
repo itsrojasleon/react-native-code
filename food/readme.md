@@ -3,7 +3,7 @@
   Search your favorite Bussines by Yelp API
 </div>
 
-<!-- Add image -->
+<img src="https://github.com/rojasleon/react-native-code/blob/master/food/example/food.png?raw=true" width="1000" />
 
 ## System Requirements
 
