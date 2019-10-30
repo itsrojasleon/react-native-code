@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import { Text, StyleSheet, ScrollView } from 'react-native';
 import SearchBar from '../components/SearchBar';
-import { useTextInput } from '../hooks/useTextInput';
-import useResults from '../hooks/useResults';
 import ResultsList from '../components/ResultsList';
+import { useTextInput } from '../hooks/useTextInput';
+import { useResults } from '../hooks/useResults';
 
 const SearchScreen = () => {
   const [searchApi, results, errorMessage] = useResults();
@@ -17,8 +17,11 @@ const SearchScreen = () => {
     <>
       <SearchBar inputProps={inputProps} />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-      <Text>We have found {results.length}</Text>
       <ScrollView>
+        <Text style={styles.found}>
+          We have found {results.length}{' '}
+          {results.length === 1 ? 'result' : 'results'}.
+        </Text>
         <ResultsList
           results={filterResultsByPrice('$')}
           title='Cost Effective'
@@ -33,6 +36,12 @@ const SearchScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  found: {
+    marginLeft: 15,
+    marginBottom: 30,
+    color: 'rgb(60, 60, 60)',
+  },
+});
 
 export default SearchScreen;
