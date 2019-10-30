@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
 import yelp from '../api/yelp';
+import Raiting from '../components/Rating';
 
 const ResultsShowScreen = ({ navigation }) => {
   const [result, setResults] = useState(null);
@@ -16,10 +17,11 @@ const ResultsShowScreen = ({ navigation }) => {
   }, []);
 
   if (!result) return null;
-  console.log(result);
+  // console.log(result);
   return (
     <View>
       <Text style={styles.title}>{result.name}</Text>
+      <Raiting totalStars={5} totalSelected={result.rating} />
       <View style={styles.container}>
         <FlatList
           data={result.photos}
