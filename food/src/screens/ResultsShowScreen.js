@@ -16,25 +16,44 @@ const ResultsShowScreen = ({ navigation }) => {
   }, []);
 
   if (!result) return null;
-
+  console.log(result);
   return (
     <View>
-      <Text>{result.name}</Text>
-      <FlatList
-        data={result.photos}
-        keyExtractor={photo => photo}
-        renderItem={({ item }) => (
-          <Image style={styles.image} source={{ uri: item }} />
-        )}
-      />
+      <Text style={styles.title}>{result.name}</Text>
+      <View style={styles.container}>
+        <FlatList
+          data={result.photos}
+          keyExtractor={photo => photo}
+          renderItem={({ item }) => (
+            <Image style={styles.image} source={{ uri: item }} />
+          )}
+        />
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  title: {
+    fontSize: 26,
+    marginTop: 20,
+    marginBottom: 20,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
   image: {
     height: 200,
-    width: 300,
+    width: 350,
+    borderRadius: 15,
+    marginBottom: 5,
+  },
+  container: {
+    margin: 'auto',
+    textAlign: 'center',
+    display: 'flex',
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
